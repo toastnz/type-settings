@@ -1,0 +1,23 @@
+{
+  "name": "toastnz/type-settings",
+  "description": "Silverstripe Type Settings Module",
+  "type": "silverstripe-module",
+  "keywords": [
+    "silverstripe",
+    "type settings",
+    "CMS"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Jaydn de Graaf",
+      "homepage": "http://pinc.nz/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "composer/installers": "*",
+    "silverstripe/cms": ">=3.0.1,<3.4",
+    "silverstripe/framework": ">=3.0.1,<3.4"
+  }
+}

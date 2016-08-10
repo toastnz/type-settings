@@ -1,0 +1,7 @@
+---
+Name: toastTypeSettings
+After: 'framework/*','cms/*'
+---
+SiteConfig:
+  extensions:
+    - TypeSettings
