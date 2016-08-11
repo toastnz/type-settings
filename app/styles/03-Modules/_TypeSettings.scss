@@ -109,8 +109,8 @@ $active-border-color: $primary;
             padding: 2rem 0;
             overflow: auto;
             button {
-                margin: 2rem 6%;
-                width: 86%;
+                margin: 2rem 2.5%;
+                width: 94%;
             }
         }
     }
@@ -122,8 +122,8 @@ $active-border-color: $primary;
         display: block;
         float: left;
         min-width: 200px;
-        &__select:after {
-            //border-color: $active-border-color transparent transparent transparent;
+        &--full {
+            width: calc(100% - 1rem);
         }
         select,
         input[type="number"],
@@ -162,7 +162,8 @@ $active-border-color: $primary;
         &__select {
             margin-top: 0;
             &:after {
-                right: 10%;
+                right: 2rem;
+                bottom: 3rem;
             }
             select {
                 padding: 2.4rem 3rem 0.7rem 0.8rem;

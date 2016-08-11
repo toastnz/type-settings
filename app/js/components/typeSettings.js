@@ -1,75 +1,16 @@
 "use strict";
-
 /*------------------------------------------------------------------
  Type settings
  ------------------------------------------------------------------*/
 
-var elementTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
-
-var typeDefinitions = {
-    fontStyle     : ['normal', 'italic', 'oblique'],
-    fontWeight    : ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-    textAlign     : ['left', 'center', 'right', 'justify'],
-    textDecoration: ['none', 'underline', 'overline', 'line-through'],
-    textTransform : ['none', 'capitalize', 'uppercase', 'lowercase']
-};
-
-var defaultValues = {
-    h1: {
-        tag       : 'h1',
-        attributes: {
-            fontSize     : {
-                css  : 'font-size',
-                value: 7,
-                unit : 'rem'
-            },
-            fontWeight   : {
-                css  : 'font-weight',
-                value: 100,
-            },
-            fontStyle    : {
-                css  : 'font-style',
-                value: 'normal',
-            },
-            textAlign    : {
-                css  : 'text-align',
-                value: 'left',
-            },
-            lineHeight   : {
-                css  : 'line-height',
-                value: 1.2,
-            },
-            letterSpacing: {
-                css  : 'letter-spacing',
-                value: 0,
-                unit : 'px'
-            },
-            colour       : {
-                css  : 'color',
-                value: '#333333'
-            },
-            background   : {
-                css  : 'background',
-                value: '#333333'
-            },
-            marginTop    : {
-                css  : "margin-top",
-                value: 0.4,
-                unit : "em"
-            },
-            marginBottom : {
-                css  : "margin-bottom",
-                value: 0.4,
-                unit : "em"
-            }
-        }
-    }
-};
+//Internal Requirements
+import {fonts, elementTags, typeDefinitions, defaultValues} from './typeVariables';
 
 // Requirements
 const $         = require('jquery');
 const _         = require('lodash');
 const CSSJSON   = require('CSSJSON');
+const chosen    = require('./chosen');
 const NProgress = require('nprogress');
 const Combokeys = require("combokeys");
 
@@ -101,6 +42,16 @@ export class TypeSettings {
             this.updateStyles();
         });
 
+        /* Enumerate the font gfamily select elements with our available fonts */
+
+        this.$el.find('.js-font-family').each(function () {
+            let $this = $(this);
+            _.each(fonts, function (font) {
+                $this.append(`<option value="${font}">${font}</option>`)
+            });
+            $this.chosen({disable_search_threshold: 10});
+        });
+
     }
 
     /* Get a nested object of the current site configs' type settings */
@@ -126,10 +77,30 @@ export class TypeSettings {
         });
     }
 
+    saveJS() {
+        let fonts = [];
+        this.$el.find('.js-font-family').each(function () {
+            fonts.push('"' + $(this).val() + '"')
+        });
+        fonts = _.uniq(fonts);
+        $.ajax({
+            url     : this.$el.attr('data-save-js'),
+            type    : 'POST',
+            dataType: 'json',
+            data    : {
+                js: `${fonts}`
+            }
+        }).done((response)=> {
+        });
+    }
+
     /* Update all of the type setting fields with the currently saved values */
     setStyles(data) {
         var count = 0;
         _.each(data, (tag)=> {
+            if (tag.attributes['font-family']) {
+                this.$el.find(`#${this.tags[count]}_font-family`).val(tag.attributes['font-family']);
+            }
             if (tag.attributes['font-size']) {
                 this.$el.find(`#${this.tags[count]}_font-size`).val(tag.attributes['font-size']);
             }
@@ -139,13 +110,13 @@ export class TypeSettings {
             if (tag.attributes['font-style']) {
                 this.$el.find(`#${this.tags[count]}_font-style`).val(tag.attributes['font-style']);
             }
-            if (tag.attributes['font-align']) {
+            if (tag.attributes['text-align']) {
                 this.$el.find(`#${this.tags[count]}_text-align`).val(tag.attributes['text-align']);
             }
-            if (tag.attributes['font-height']) {
+            if (tag.attributes['line-height']) {
                 this.$el.find(`#${this.tags[count]}_line-height`).val(tag.attributes['line-height']);
             }
-            if (tag.attributes['font-spacing']) {
+            if (tag.attributes['letter-spacing']) {
                 this.$el.find(`#${this.tags[count]}_letter-spacing`).val(tag.attributes['letter-spacing']);
             }
             count++;
@@ -202,6 +173,7 @@ export class TypeSettings {
         return {
             [selector]: {
                 attributes: {
+                    "font-family"   : this.$el.find(`#${input}_font-family`).val(),
                     "font-size"     : this.$el.find(`#${input}_font-size`).val() + "rem",
                     "font-weight"   : this.$el.find(`#${input}_font-weight`).val(),
                     "font-style"    : this.$el.find(`#${input}_font-style`).val(),
@@ -224,7 +196,11 @@ combokeys.bind(['ctrl+t'], function () {
     return false;
 });
 
+Type.toggle();
+Type.loadStyles();
+
 $('.js-save-type-settings').click(()=> {
     Type.saveCSS();
+    Type.saveJS();
     Type.saveStyles();
 });

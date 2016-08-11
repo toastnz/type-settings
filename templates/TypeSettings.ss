@@ -6,7 +6,7 @@
     <% require css("type-settings/dist/styles/style.css") %>
     <% require javascript("type-settings/dist/js/typeSettings.js") %>
 
-    <div id="typeSettings" class="type-settings" data-save-type-settings="$Link('SaveTypeSettings')" data-load-type-settings="$Link('LoadTypeSettings')" data-save-css="$Link('SaveCSS')">
+    <div id="typeSettings" class="type-settings" data-save-type-settings="$Link('SaveTypeSettings')" data-load-type-settings="$Link('LoadTypeSettings')" data-save-css="$Link('SaveCSS')" data-save-js="$Link('SaveJS')">
         <!--Header-->
         <div class="type-settings__header">
             <h5>TYPE SETTINGS</h5>
@@ -14,12 +14,22 @@
         </div>
 
         <div class="scroll-wrap">
-            <!--Heading 1 Settings-->
+
+            <!-- ------------------------------------------------------------------------------------------- -->
+            <!--                                        Heading One                                          -->
+            <!-- ------------------------------------------------------------------------------------------- -->
+
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_1">HEADING 1
                         <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
                     <div id="Heading_1" class="collapsible js-type-setting" data-selector="h1">
+
+                        <%--Font Family--%>
+                        <div class="input-wrap input-wrap__select input-wrap--full">
+                            <select id="Heading_1_font-family" class="js-font-family"></select>
+                            <label for="Heading_1_font-family">FONT FAMILY</label>
+                        </div>
 
                         <%--Font Size--%>
                         <div class="input-wrap input-wrap__number">
@@ -97,12 +107,21 @@
 
             <div class="clearfix"></div>
 
-            <!--Heading 2 Settings-->
+            <!-- ------------------------------------------------------------------------------------------- -->
+            <!--                                        Heading Two                                          -->
+            <!-- ------------------------------------------------------------------------------------------- -->
+
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_2">HEADING 2
                         <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
                     <div id="Heading_2" class="collapsible js-type-setting" data-selector="h2">
+
+                        <%--Font Family--%>
+                        <div class="input-wrap input-wrap__select input-wrap--full">
+                            <select id="Heading_2_font-family" class="js-font-family"></select>
+                            <label for="Heading_2_font-family">FONT FAMILY</label>
+                        </div>
 
                         <%--Font Size--%>
                         <div class="input-wrap input-wrap__number">
@@ -180,12 +199,21 @@
 
             <div class="clearfix"></div>
 
-            <!--Heading 2 Settings-->
+            <!-- ------------------------------------------------------------------------------------------- -->
+            <!--                                        Heading Three                                        -->
+            <!-- ------------------------------------------------------------------------------------------- -->
+
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_3">HEADING 3
                         <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
                     <div id="Heading_3" class="collapsible js-type-setting" data-selector="h3">
+
+                        <%--Font Family--%>
+                        <div class="input-wrap input-wrap__select input-wrap--full">
+                            <select id="Heading_3_font-family" class="js-font-family"></select>
+                            <label for="Heading_3_font-family">FONT FAMILY</label>
+                        </div>
 
                         <%--Font Size--%>
                         <div class="input-wrap input-wrap__number">
@@ -263,12 +291,21 @@
 
             <div class="clearfix"></div>
 
-            <!--Heading 4 Settings-->
+            <!-- ------------------------------------------------------------------------------------------- -->
+            <!--                                        Heading Four                                         -->
+            <!-- ------------------------------------------------------------------------------------------- -->
+
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_4">HEADING 4
                         <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
                     <div id="Heading_4" class="collapsible js-type-setting" data-selector="h4">
+
+                        <%--Font Family--%>
+                        <div class="input-wrap input-wrap__select input-wrap--full">
+                            <select id="Heading_4_font-family" class="js-font-family"></select>
+                            <label for="Heading_4_font-family">FONT FAMILY</label>
+                        </div>
 
                         <%--Font Size--%>
                         <div class="input-wrap input-wrap__number">
@@ -346,12 +383,21 @@
 
             <div class="clearfix"></div>
 
-            <!--Heading 5 Settings-->
+            <!-- ------------------------------------------------------------------------------------------- -->
+            <!--                                        Heading Five                                         -->
+            <!-- ------------------------------------------------------------------------------------------- -->
+
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_5">HEADING 5
                         <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
                     <div id="Heading_5" class="collapsible js-type-setting" data-selector="h5">
+
+                        <%--Font Family--%>
+                        <div class="input-wrap input-wrap__select input-wrap--full">
+                            <select id="Heading_5_font-family" class="js-font-family"></select>
+                            <label for="Heading_5_font-family">FONT FAMILY</label>
+                        </div>
 
                         <%--Font Size--%>
                         <div class="input-wrap input-wrap__number">
@@ -429,12 +475,21 @@
 
             <div class="clearfix"></div>
 
-            <!--Heading 6 Settings-->
+            <!-- ------------------------------------------------------------------------------------------- -->
+            <!--                                        Heading Six                                          -->
+            <!-- ------------------------------------------------------------------------------------------- -->
+
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_6">HEADING 6
                         <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
                     <div id="Heading_6" class="collapsible js-type-setting" data-selector="h6">
+
+                        <%--Font Family--%>
+                        <div class="input-wrap input-wrap__select input-wrap--full">
+                            <select id="Heading_6_font-family" class="js-font-family"></select>
+                            <label for="Heading_6_font-family">FONT FAMILY</label>
+                        </div>
 
                         <%--Font Size--%>
                         <div class="input-wrap input-wrap__number">
@@ -513,12 +568,21 @@
 
             <div class="clearfix"></div>
 
-            <!--Heading 4 Settings-->
+            <!-- ------------------------------------------------------------------------------------------- -->
+            <!--                                        Paragraph                                            -->
+            <!-- ------------------------------------------------------------------------------------------- -->
+
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Paragraph">PARAGRAPH
                         <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
                     <div id="Paragraph" class="collapsible js-type-setting" data-selector="p">
+
+                        <%--Font Family--%>
+                        <div class="input-wrap input-wrap__select input-wrap--full">
+                            <select id="Paragraph_font-family" class="js-font-family"></select>
+                            <label for="Paragraph_font-family">FONT FAMILY</label>
+                        </div>
 
                         <%--Font Size--%>
                         <div class="input-wrap input-wrap__number">
@@ -598,4 +662,23 @@
         </div>
 
     </div>
+<% else %>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: [$SiteConfig.TypeSettingsJS]
+            }
+        });
+    </script>
 <% end_if %>
+<style>
+    html, body {
+        font-size: 10px;
+    }
+
+    html *, body * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+</style>

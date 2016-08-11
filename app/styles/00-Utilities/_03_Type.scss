@@ -94,21 +94,12 @@ Tags
 ------------------------------------------------------------------*/
 
 html, body {
-    font-size: $base * 0.8;
-    @include media($md) {
-        font-size: $base * 0.85;
-    }
-    @include media($lg) {
-        font-size: $base * 0.9;
-    }
-    @include media($xl) {
-        font-size: $base;
-    }
-    @include heading;
-    * {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+    font-size: $base;
+}
+
+html *, body * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 #typeSettings {
