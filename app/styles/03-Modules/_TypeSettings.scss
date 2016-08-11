@@ -20,10 +20,6 @@ $active-border-color: $primary;
     border-right: 5rem solid $grey-dark;
 }
 
-html {
-    background: $grey-dark;
-}
-
 #typeSettings.visible {
     transition-delay: 330ms;
 }

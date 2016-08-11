@@ -32,7 +32,6 @@ Access Font Size
 Font Awesome
 ------------------------------------------------------------------*/
 
-
 /*------------------------------------------------------------------
 Font Colurs
 ------------------------------------------------------------------*/
@@ -112,76 +111,78 @@ html, body {
     }
 }
 
-@each $name, $font in $fonts {
-    #{$name} {
-        font-size: $font;
-        line-height: 1.2;
-        margin: 0 0 1.6rem;
-        transition: all 220ms $transition-deceleration;
-        @include light;
-    }
-}
-
-ol,
-ul {
-    padding-left: 4rem;
-    li {
-        position: relative;
-        &:before {
-            @include pseudo;
-            width: 0.4rem;
-            height: 0.4rem;
-            border-radius: 0.4rem;
-            background: $primary;
-            top: 0.8rem;
-            left: -1.3rem;
+#typeSettings {
+    @each $name, $font in $fonts {
+        #{$name} {
+            font-size: $font;
+            line-height: 1.2;
+            margin: 0 0 1.6rem;
+            transition: all 220ms $transition-deceleration;
+            @include light;
         }
     }
-}
 
-p, li {
-    @include copy;
-    margin: 1.6rem 0;
-    line-height: 1.6;
-    color: $text-light;
-    a {
-        color: $primary;
-        text-decoration: none;
-        @include active {
-            text-decoration: underline;
+    ol,
+    ul {
+        padding-left: 4rem;
+        li {
+            position: relative;
+            &:before {
+                @include pseudo;
+                width: 0.4rem;
+                height: 0.4rem;
+                border-radius: 0.4rem;
+                background: $primary;
+                top: 0.8rem;
+                left: -1.3rem;
+            }
         }
     }
-}
 
-i, em {
-    font-style: italic;
-}
-
-strong, b {
-    font-weight: bold;
-}
-
-blockquote {
-    margin: 3rem;
-    padding: 0 2rem;
-    border-left: 4px solid $primary;
-    p {
-        margin: 0;
+    p, li {
+        @include copy;
+        margin: 1.6rem 0;
+        line-height: 1.6;
+        color: $text-light;
+        a {
+            color: $primary;
+            text-decoration: none;
+            @include active {
+                text-decoration: underline;
+            }
+        }
     }
-}
 
-::selection {
-    color: $white;
-    background: $primary;
-}
+    i, em {
+        font-style: italic;
+    }
 
-/*------------------------------------------------------------------
-Layout and Constraits
-------------------------------------------------------------------*/
+    strong, b {
+        font-weight: bold;
+    }
 
-.layout {
-    padding: 2rem;
-    max-width: 1140px;
-    display: block;
-    margin: 0 auto;
+    blockquote {
+        margin: 3rem;
+        padding: 0 2rem;
+        border-left: 4px solid $primary;
+        p {
+            margin: 0;
+        }
+    }
+
+    ::selection {
+        color: $white;
+        background: $primary;
+    }
+
+    /*------------------------------------------------------------------
+    Layout and Constraits
+    ------------------------------------------------------------------*/
+
+    .layout {
+        padding: 2rem;
+        max-width: 1140px;
+        display: block;
+        margin: 0 auto;
+    }
 }
