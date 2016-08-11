@@ -31,7 +31,7 @@
                         <%--Font Weight--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_1_font-weight">
-                                <option value="100">100</option>
+                                <option value="100" selected="selected">100</option>
                                 <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
@@ -47,7 +47,7 @@
                         <%--Font Style--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_1_font-style">
-                                <option value="normal">Normal</option>
+                                <option value="normal" selected="selected">Normal</option>
                                 <option value="italic">Italic</option>
                             </select>
                             <label for="Heading_1_font-style">FONT STYLE</label>
@@ -70,7 +70,7 @@
                         <%--Font Align--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_1_text-align">
-                                <option value="left">Left</option>
+                                <option value="left" selected="selected">Left</option>
                                 <option value="center">Center</option>
                                 <option value="right">Right</option>
                             </select>
@@ -114,7 +114,7 @@
                         <%--Font Weight--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_2_font-weight">
-                                <option value="100">100</option>
+                                <option value="100" selected="selected">100</option>
                                 <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
@@ -130,7 +130,7 @@
                         <%--Font Style--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_2_font-style">
-                                <option value="normal">Normal</option>
+                                <option value="normal" selected="selected">Normal</option>
                                 <option value="italic">Italic</option>
                             </select>
                             <label for="Heading_2_font-style">FONT STYLE</label>
@@ -153,7 +153,7 @@
                         <%--Font Align--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_2_text-align">
-                                <option value="left">Left</option>
+                                <option value="left" selected="selected">Left</option>
                                 <option value="center">Center</option>
                                 <option value="right">Right</option>
                             </select>
@@ -197,7 +197,7 @@
                         <%--Font Weight--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_3_font-weight">
-                                <option value="100">100</option>
+                                <option value="100" selected="selected">100</option>
                                 <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
@@ -213,7 +213,7 @@
                         <%--Font Style--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_3_font-style">
-                                <option value="normal">Normal</option>
+                                <option value="normal" selected="selected">Normal</option>
                                 <option value="italic">Italic</option>
                             </select>
                             <label for="Heading_3_font-style">FONT STYLE</label>
@@ -236,7 +236,7 @@
                         <%--Font Align--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_3_text-align">
-                                <option value="left">Left</option>
+                                <option value="left" selected="selected">Left</option>
                                 <option value="center">Center</option>
                                 <option value="right">Right</option>
                             </select>
@@ -280,7 +280,7 @@
                         <%--Font Weight--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_4_font-weight">
-                                <option value="100">100</option>
+                                <option value="100" selected="selected">100</option>
                                 <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
@@ -296,7 +296,7 @@
                         <%--Font Style--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_4_font-style">
-                                <option value="normal">Normal</option>
+                                <option value="normal" selected="selected">Normal</option>
                                 <option value="italic">Italic</option>
                             </select>
                             <label for="Heading_4_font-style">FONT STYLE</label>
@@ -319,7 +319,7 @@
                         <%--Font Align--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_4_text-align">
-                                <option value="left">Left</option>
+                                <option value="left" selected="selected">Left</option>
                                 <option value="center">Center</option>
                                 <option value="right">Right</option>
                             </select>
@@ -363,7 +363,7 @@
                         <%--Font Weight--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_5_font-weight">
-                                <option value="100">100</option>
+                                <option value="100" selected="selected">100</option>
                                 <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
@@ -379,7 +379,7 @@
                         <%--Font Style--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_5_font-style">
-                                <option value="normal">Normal</option>
+                                <option value="normal" selected="selected">Normal</option>
                                 <option value="italic">Italic</option>
                             </select>
                             <label for="Heading_5_font-style">FONT STYLE</label>
@@ -402,7 +402,7 @@
                         <%--Font Align--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_5_text-align">
-                                <option value="left">Left</option>
+                                <option value="left" selected="selected">Left</option>
                                 <option value="center">Center</option>
                                 <option value="right">Right</option>
                             </select>
@@ -446,7 +446,7 @@
                         <%--Font Weight--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_6_font-weight">
-                                <option value="100">100</option>
+                                <option value="100" selected="selected">100</option>
                                 <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
@@ -462,7 +462,7 @@
                         <%--Font Style--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_6_font-style">
-                                <option value="normal">Normal</option>
+                                <option value="normal" selected="selected">Normal</option>
                                 <option value="italic">Italic</option>
                             </select>
                             <label for="Heading_6_font-style">FONT STYLE</label>
@@ -485,7 +485,7 @@
                         <%--Font Align--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_6_text-align">
-                                <option value="left">Left</option>
+                                <option value="left" selected="selected">Left</option>
                                 <option value="center">Center</option>
                                 <option value="right">Right</option>
                             </select>
@@ -530,7 +530,7 @@
                         <%--Font Weight--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Paragraph_font-weight">
-                                <option value="100">100</option>
+                                <option value="100" selected="selected">100</option>
                                 <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
@@ -546,7 +546,7 @@
                         <%--Font Style--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Paragraph_font-style">
-                                <option value="normal">Normal</option>
+                                <option value="normal" selected="selected">Normal</option>
                                 <option value="italic">Italic</option>
                             </select>
                             <label for="Paragraph_font-style">FONT STYLE</label>
@@ -569,7 +569,7 @@
                         <%--Font Align--%>
                         <div class="input-wrap input-wrap__select">
                             <select id="Paragraph_text-align">
-                                <option value="left">Left</option>
+                                <option value="left" selected="selected">Left</option>
                                 <option value="center">Center</option>
                                 <option value="right">Right</option>
                             </select>
@@ -596,7 +596,6 @@
             <div class="clearfix"></div>
             <button class="button js-save-type-settings">SAVE SETTINGS</button>
         </div>
-
 
     </div>
 <% end_if %>

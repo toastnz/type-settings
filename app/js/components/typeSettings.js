@@ -130,12 +130,24 @@ export class TypeSettings {
     setStyles(data) {
         var count = 0;
         _.each(data, (tag)=> {
-            this.$el.find(`#${this.tags[count]}_font-size`).val(tag.attributes['font-size']);
-            this.$el.find(`#${this.tags[count]}_font-weight`).val(tag.attributes['font-weight']);
-            this.$el.find(`#${this.tags[count]}_font-style`).val(tag.attributes['font-style']);
-            this.$el.find(`#${this.tags[count]}_text-align`).val(tag.attributes['text-align']);
-            this.$el.find(`#${this.tags[count]}_line-height`).val(tag.attributes['line-height']);
-            this.$el.find(`#${this.tags[count]}_letter-spacing`).val(tag.attributes['letter-spacing']);
+            if (tag.attributes['font-size']) {
+                this.$el.find(`#${this.tags[count]}_font-size`).val(tag.attributes['font-size']);
+            }
+            if (tag.attributes['font-weight']) {
+                this.$el.find(`#${this.tags[count]}_font-weight`).val(tag.attributes['font-weight']);
+            }
+            if (tag.attributes['font-style']) {
+                this.$el.find(`#${this.tags[count]}_font-style`).val(tag.attributes['font-style']);
+            }
+            if (tag.attributes['font-align']) {
+                this.$el.find(`#${this.tags[count]}_text-align`).val(tag.attributes['text-align']);
+            }
+            if (tag.attributes['font-height']) {
+                this.$el.find(`#${this.tags[count]}_line-height`).val(tag.attributes['line-height']);
+            }
+            if (tag.attributes['font-spacing']) {
+                this.$el.find(`#${this.tags[count]}_letter-spacing`).val(tag.attributes['letter-spacing']);
+            }
             count++;
         });
         this.updateStyles();
