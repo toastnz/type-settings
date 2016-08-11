@@ -13,6 +13,7 @@ const CSSJSON   = require('CSSJSON');
 const chosen    = require('./chosen');
 const NProgress = require('nprogress');
 const Combokeys = require("combokeys");
+const WebFont   = require('webfontloader');
 
 /**
  * TypeSettings class to update the styles in realtime of common
@@ -42,6 +43,10 @@ export class TypeSettings {
             this.updateStyles();
         });
 
+        this.$el.find('select').each(function () {
+            $(this).chosen({disable_search_threshold: 11});
+        });
+
         /* Enumerate the font gfamily select elements with our available fonts */
 
         this.$el.find('.js-font-family').each(function () {
@@ -49,9 +54,22 @@ export class TypeSettings {
             _.each(fonts, function (font) {
                 $this.append(`<option value="${font}">${font}</option>`)
             });
-            $this.chosen({disable_search_threshold: 10});
+            $this.chosen({disable_search_threshold: 11});
         });
 
+    }
+
+    /* Load up reselected google fonts on change */
+    loadFonts() {
+        let fontsToLoad = [];
+        this.$el.find('.js-font-family').each(function () {
+            fontsToLoad.push($(this).find('option:selected').val());
+        });
+        WebFont.load({
+            google: {
+                families: fontsToLoad
+            }
+        });
     }
 
     /* Get a nested object of the current site configs' type settings */
@@ -100,6 +118,7 @@ export class TypeSettings {
         _.each(data, (tag)=> {
             if (tag.attributes['font-family']) {
                 this.$el.find(`#${this.tags[count]}_font-family`).val(tag.attributes['font-family']);
+                $('.js-font-family').trigger('chosen:updated');
             }
             if (tag.attributes['font-size']) {
                 this.$el.find(`#${this.tags[count]}_font-size`).val(tag.attributes['font-size']);
@@ -157,6 +176,7 @@ export class TypeSettings {
 
     /* Update the page to reflect the current Type Settings */
     updateStyles() {
+        this.loadFonts();
         this.assignStyles();
         this.$styleSheet.html(CSSJSON.toCSS(this.styles));
     }
@@ -204,3 +224,5 @@ $('.js-save-type-settings').click(()=> {
     Type.saveJS();
     Type.saveStyles();
 });
+
+
