@@ -27,3 +27,8 @@ Then add the following to the body of your document
 ```
 
 Hit Ctrl + T to show the type settings panel
+
+
+<p align="center">
+  <img style="width:100%;height:auto; max-width:488px" src="http://pinc.nz/git/typesettings/settings.png">
+</p>
