@@ -118,7 +118,6 @@ export class TypeSettings {
         _.each(data, (tag)=> {
             if (tag.attributes['font-family']) {
                 this.$el.find(`#${this.tags[count]}_font-family`).val(tag.attributes['font-family']);
-                $('.js-font-family').trigger('chosen:updated');
             }
             if (tag.attributes['font-size']) {
                 this.$el.find(`#${this.tags[count]}_font-size`).val(tag.attributes['font-size']);
@@ -140,6 +139,7 @@ export class TypeSettings {
             }
             count++;
         });
+        this.$el.find('select').trigger('chosen:updated');
         this.updateStyles();
     }
 
@@ -154,7 +154,7 @@ export class TypeSettings {
             data    : {
                 styles: this.styles.children
             }
-        }).done((response)=> {
+        }).done(()=> {
             NProgress.done();
         });
     }

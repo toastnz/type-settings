@@ -16,7 +16,7 @@ $box-background-inactive: $grey-light;
 
 #typeSettings {
     * {
-        font-family: 'Arial', sans-serif;
+        @include normal;
     }
     .chosen-container {
         position: relative;
@@ -78,7 +78,7 @@ $box-background-inactive: $grey-light;
         position: relative;
         display: block;
         overflow: hidden;
-        padding: 0.4rem 0;
+        padding: 0.5rem 0 0.6rem;
         border: 1px solid $input-border-colour;
         background-color: $input-background-colour;
         background-clip: padding-box;
@@ -175,16 +175,16 @@ $box-background-inactive: $grey-light;
     /* @group Results */
     .chosen-container {
         ::-webkit-scrollbar-track {
-            background-color: #F5F5F5;
+            background-color: #f7f7f7;
         }
 
         ::-webkit-scrollbar {
             width: 4px;
-            background-color: #F5F5F5;
+            background-color: #f7f7f7;
         }
 
         ::-webkit-scrollbar-thumb {
-            background-color: #313237;
+            background-color: $primary;
             border: 0;
         }
 
@@ -281,7 +281,6 @@ $box-background-inactive: $grey-light;
         background: transparent !important;
         box-shadow: none;
         color: #999;
-        font-family: sans-serif;
         line-height: normal;
         border-radius: 0;
     }

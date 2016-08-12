@@ -22,7 +22,14 @@
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_1">HEADING 1
-                        <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
+                        <svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-499.000000, -319.000000)" fill="#FFFFFF">
+                                    <polygon transform="translate(511.023437, 326.000000) rotate(-90.000000) translate(-511.023437, -326.000000) " points="504.103572 326.000072 515.607707 337.504063 517.943303 335.214121 508.849658 326.000072 517.943303 316.980761 515.607707 314.495938"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </h6>
                     <div id="Heading_1" class="collapsible js-type-setting" data-selector="h1">
 
                         <%--Font Family--%>
@@ -114,7 +121,14 @@
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_2">HEADING 2
-                        <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
+                        <svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-499.000000, -319.000000)" fill="#FFFFFF">
+                                    <polygon transform="translate(511.023437, 326.000000) rotate(-90.000000) translate(-511.023437, -326.000000) " points="504.103572 326.000072 515.607707 337.504063 517.943303 335.214121 508.849658 326.000072 517.943303 316.980761 515.607707 314.495938"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </h6>
                     <div id="Heading_2" class="collapsible js-type-setting" data-selector="h2">
 
                         <%--Font Family--%>
@@ -206,7 +220,14 @@
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_3">HEADING 3
-                        <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
+                        <svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-499.000000, -319.000000)" fill="#FFFFFF">
+                                    <polygon transform="translate(511.023437, 326.000000) rotate(-90.000000) translate(-511.023437, -326.000000) " points="504.103572 326.000072 515.607707 337.504063 517.943303 335.214121 508.849658 326.000072 517.943303 316.980761 515.607707 314.495938"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </h6>
                     <div id="Heading_3" class="collapsible js-type-setting" data-selector="h3">
 
                         <%--Font Family--%>
@@ -298,7 +319,14 @@
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_4">HEADING 4
-                        <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
+                        <svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-499.000000, -319.000000)" fill="#FFFFFF">
+                                    <polygon transform="translate(511.023437, 326.000000) rotate(-90.000000) translate(-511.023437, -326.000000) " points="504.103572 326.000072 515.607707 337.504063 517.943303 335.214121 508.849658 326.000072 517.943303 316.980761 515.607707 314.495938"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </h6>
                     <div id="Heading_4" class="collapsible js-type-setting" data-selector="h4">
 
                         <%--Font Family--%>
@@ -390,7 +418,14 @@
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_5">HEADING 5
-                        <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
+                        <svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-499.000000, -319.000000)" fill="#FFFFFF">
+                                    <polygon transform="translate(511.023437, 326.000000) rotate(-90.000000) translate(-511.023437, -326.000000) " points="504.103572 326.000072 515.607707 337.504063 517.943303 335.214121 508.849658 326.000072 517.943303 316.980761 515.607707 314.495938"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </h6>
                     <div id="Heading_5" class="collapsible js-type-setting" data-selector="h5">
 
                         <%--Font Family--%>
@@ -482,7 +517,14 @@
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Heading_6">HEADING 6
-                        <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
+                        <svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-499.000000, -319.000000)" fill="#FFFFFF">
+                                    <polygon transform="translate(511.023437, 326.000000) rotate(-90.000000) translate(-511.023437, -326.000000) " points="504.103572 326.000072 515.607707 337.504063 517.943303 335.214121 508.849658 326.000072 517.943303 316.980761 515.607707 314.495938"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </h6>
                     <div id="Heading_6" class="collapsible js-type-setting" data-selector="h6">
 
                         <%--Font Family--%>
@@ -575,7 +617,14 @@
             <div class="headingWrap">
                 <div class="innerWrap">
                     <h6 class="js-collapsible" data-colapsible-target="#Paragraph">PARAGRAPH
-                        <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
+                        <svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-499.000000, -319.000000)" fill="#FFFFFF">
+                                    <polygon transform="translate(511.023437, 326.000000) rotate(-90.000000) translate(-511.023437, -326.000000) " points="504.103572 326.000072 515.607707 337.504063 517.943303 335.214121 508.849658 326.000072 517.943303 316.980761 515.607707 314.495938"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </h6>
                     <div id="Paragraph" class="collapsible js-type-setting" data-selector="p">
 
                         <%--Font Family--%>
