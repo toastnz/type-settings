@@ -51,12 +51,12 @@ $active-border-color: $primary;
         position: relative;
         overflow: hidden;
         max-height: 0;
-        padding: 0 1rem;
-        margin-bottom: 0.2rem;
+        padding: 0 1.5rem;
+        margin-bottom: 0;
         @include clearfix;
         transition: all 330ms $transition-standard;
         &.expanded {
-            padding: 1rem;
+            padding: 1.5rem 1.5rem;
             max-height: 100rem;
             overflow: visible;
         }
@@ -64,14 +64,23 @@ $active-border-color: $primary;
 
     .headingWrap {
         position: relative;
-        margin-bottom: 0.4rem;
+        margin: 0;
+        &:after {
+            @include pseudo;
+            z-index: 3;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            background: rgba(white, 0.4);
+        }
         h6 {
             cursor: pointer;
             background-image: linear-gradient(to right, $primary 0%, rgba($primary, 0.7) 100%);
             color: white;
             padding: 1.2rem;
             margin-bottom: 0;
-            @include normal;
+            @include bold;
             font-size: 1.6rem;
         }
         svg {
@@ -88,19 +97,18 @@ $active-border-color: $primary;
         background-image: linear-gradient(to bottom, #fff 0%, #ebebeb 100%);
         z-index: 9;
         .type-settings__header {
-            padding: 1rem 1rem 0.1rem;
+            padding: 3rem 1rem 2rem;
             background-image: linear-gradient(to top, #fff 0%, #ebebeb 100%);
             h5 {
                 color: $primary;
                 text-align: center;
                 @include light;
                 font-size: 3rem;
-                margin: 0;
             }
         }
         .scroll-wrap {
             position: absolute;
-            top: 3.5rem;
+            top: 7.5rem;
             right: 0;
             bottom: 0;
             left: 0;
@@ -119,7 +127,6 @@ $active-border-color: $primary;
         margin: 0 0.5rem 0;
         display: block;
         float: left;
-        //min-width: 200px;
         &--full {
             width: calc(100% - 1rem);
         }
@@ -181,3 +188,4 @@ $active-border-color: $primary;
         }
     }
 }
+

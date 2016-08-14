@@ -15,6 +15,8 @@ const NProgress = require('nprogress');
 const Combokeys = require("combokeys");
 const WebFont   = require('webfontloader');
 
+
+
 /**
  * TypeSettings class to update the styles in realtime of common
  * type properties
