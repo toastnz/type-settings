@@ -65,6 +65,7 @@ export class TypeSettings {
             if (this.colorPickerActive && $el.closest('.js-color').hasClass('active')) {
                 $el.closest('.input-wrap__color').find('input').val(this.colorPicker.getHexString());
                 $el.closest('.input-wrap__color').find('.color-swatch').css({'background': this.colorPicker.getHexString()});
+                this.updateColours();
             } else if (this.colorPickerActive && !$el.hasClass('active') && !$el.closest('.js-color').hasClass('active')) {
                 this.destroyColorPicker();
                 this.createColorPicker($el);
@@ -193,8 +194,8 @@ export class TypeSettings {
             count++;
         });
         this.$el.find('select').trigger('chosen:updated');
-        this.updateStyles();
         this.updateColours();
+        this.updateStyles();
     }
 
     updateColours() {
@@ -202,6 +203,7 @@ export class TypeSettings {
             let $this = $(this);
             $this.css({'background': $this.closest('.input-wrap__color').find('input').val()});
         });
+        this.updateStyles();
     }
 
     /* Update the current type settings */
