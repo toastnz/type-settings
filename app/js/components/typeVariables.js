@@ -3,6 +3,7 @@
  ------------------------------------------------------------------*/
 
 export const fonts = [
+    'Open Sans',
     'ABeeZee',
     'Abel',
     'Abril Fatface',

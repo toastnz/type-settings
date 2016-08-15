@@ -78,14 +78,14 @@ $active-border-color: $primary;
             cursor: pointer;
             background-image: linear-gradient(to right, $primary 0%, rgba($primary, 0.7) 100%);
             color: white;
-            padding: 1.2rem;
+            padding: 1.2rem 2rem;
             margin-bottom: 0;
             @include bold;
             font-size: 1.6rem;
         }
         svg {
             @include vertical-align;
-            right: 1rem;
+            right: 2rem;
         }
     }
 
@@ -100,10 +100,23 @@ $active-border-color: $primary;
             padding: 3rem 1rem 2rem;
             background-image: linear-gradient(to top, #fff 0%, #ebebeb 100%);
             h5 {
+                display: inline-block;
+                vertical-align: middle;
                 color: $primary;
                 text-align: center;
                 @include light;
                 font-size: 3rem;
+            }
+            svg {
+                display: inline-block;
+                vertical-align: middle;
+                position: relative;
+                top: -2px;
+                margin-right: 1rem;
+                margin-left: 1rem;
+                path {
+                    fill: $primary;
+                }
             }
         }
         .scroll-wrap {
@@ -128,7 +141,9 @@ $active-border-color: $primary;
         display: block;
         float: left;
         &--full {
-            width: calc(100% - 1rem);
+            width: calc(50% - 1rem);
+            margin-top: 6px;
+            margin-bottom: 7px;
         }
         select,
         input[type="number"],

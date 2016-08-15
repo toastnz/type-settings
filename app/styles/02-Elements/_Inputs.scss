@@ -107,6 +107,27 @@ $box-background-inactive: $grey-light;
 
             }
         }
+        &__color {
+            z-index:9;
+            @extend .input-wrap;
+            .color-swatch {
+                border: 3px solid white;
+                @include aspect(1, 1);
+                @include vertical-align;
+                cursor: pointer;
+                outline:1px solid $input-border-colour;
+                &:hover{
+                    outline:1px solid $active-input-border-colour;
+                }
+                right: 1rem;
+                box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+                width: 40px;
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);
+            }
+            label {
+                margin-top: 0;
+            }
+        }
     }
 
     /*------------------------------------------------------------------

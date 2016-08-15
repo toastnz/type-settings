@@ -10,16 +10,13 @@ class ControllerExtension extends Extension {
         'LoadTypeSettings'
     );
 
-    public function texter() {
-        return 'yay i am working';
-    }
-
     public function LoadTypeSettings(SS_HTTPRequest $request) {
         $data = [];
         $siteConfig = SiteConfig::current_site_config();
         $tags = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p');
         $styles = array(
             'font-family',
+            'color',
             'font-size',
             'font-weight',
             'font-style',
@@ -58,6 +55,7 @@ class ControllerExtension extends Extension {
         $tags = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p');
         $styles = array(
             'font-family',
+            'color',
             'font-size',
             'font-weight',
             'font-style',

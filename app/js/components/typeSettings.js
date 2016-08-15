@@ -14,8 +14,7 @@ const chosen    = require('./chosen');
 const NProgress = require('nprogress');
 const Combokeys = require("combokeys");
 const WebFont   = require('webfontloader');
-
-
+var ColorPicker = require('simple-color-picker');
 
 /**
  * TypeSettings class to update the styles in realtime of common
@@ -29,10 +28,12 @@ export class TypeSettings {
     constructor(element, stylesheet) {
 
         /* Constructor elements and variables */
-        this.$el         = $(`#${element}`);
-        this.$styleSheet = $(`#${stylesheet}`);
-        this.styles      = {children: {}};
-        this.tags        = ['Heading_1', 'Heading_2', 'Heading_3', 'Heading_4', 'Heading_5', 'Heading_6', 'Paragraph'];
+        this.$el               = $(`#${element}`);
+        this.$styleSheet       = $(`#${stylesheet}`);
+        this.styles            = {children: {}};
+        this.colorPicker       = {};
+        this.colorPickerActive = false;
+        this.tags              = ['Heading_1', 'Heading_2', 'Heading_3', 'Heading_4', 'Heading_5', 'Heading_6', 'Paragraph'];
 
         /* Toggle height for the collapsible items */
         this.$el.find('.js-collapsible').click(function () {
@@ -40,7 +41,6 @@ export class TypeSettings {
         });
 
         /* Update style when the input elements change */
-
         this.$el.find('input, select').on('keyup input change', ()=> {
             this.updateStyles();
         });
@@ -49,8 +49,31 @@ export class TypeSettings {
             $(this).chosen({disable_search_threshold: 11});
         });
 
-        /* Enumerate the font gfamily select elements with our available fonts */
+        var $element = $('.js-color');
+        this.$el.on('mouseup', (e)=> {
+            if (!$element.is(e.target) && $element.has(e.target).length === 0) {
+                this.destroyColorPicker();
+            }
+        });
 
+        this.$el.find('.input-wrap__color input').on('change keyup', ()=> {
+            this.updateColours();
+        });
+
+        this.$el.find('.js-color').on('click', (e)=> {
+            let $el = $(e.target);
+            if (this.colorPickerActive && $el.closest('.js-color').hasClass('active')) {
+                $el.closest('.input-wrap__color').find('input').val(this.colorPicker.getHexString());
+                $el.closest('.input-wrap__color').find('.color-swatch').css({'background': this.colorPicker.getHexString()});
+            } else if (this.colorPickerActive && !$el.hasClass('active') && !$el.closest('.js-color').hasClass('active')) {
+                this.destroyColorPicker();
+                this.createColorPicker($el);
+            } else {
+                this.createColorPicker($el);
+            }
+        });
+
+        /* Enumerate the font gfamily select elements with our available fonts */
         this.$el.find('.js-font-family').each(function () {
             let $this = $(this);
             _.each(fonts, function (font) {
@@ -59,6 +82,31 @@ export class TypeSettings {
             $this.chosen({disable_search_threshold: 11});
         });
 
+    }
+
+    destroyColorPicker() {
+        this.$el.find('.js-color').removeClass('active');
+        if (this.colorPickerActive) {
+            this.colorPicker.remove();
+        }
+        this.colorPickerActive = false;
+    }
+
+    createColorPicker($el) {
+        $el.addClass('active');
+        if (!this.colorPickerActive) {
+            this.colorPicker       = new ColorPicker({
+                color     : '#333333',
+                background: '#FFFFFF',
+                el        : $el[0],
+                width     : 150,
+                height    : 150
+            });
+            this.colorPickerActive = true;
+        }
+        if ($el.closest('.input-wrap__color').find('input').val().length) {
+            this.colorPicker.setColor($el.closest('.input-wrap__color').find('input').val());
+        }
     }
 
     /* Load up reselected google fonts on change */
@@ -121,6 +169,9 @@ export class TypeSettings {
             if (tag.attributes['font-family']) {
                 this.$el.find(`#${this.tags[count]}_font-family`).val(tag.attributes['font-family']);
             }
+            if (tag.attributes['color']) {
+                this.$el.find(`#${this.tags[count]}_color`).val(tag.attributes['color']);
+            }
             if (tag.attributes['font-size']) {
                 this.$el.find(`#${this.tags[count]}_font-size`).val(tag.attributes['font-size']);
             }
@@ -143,6 +194,14 @@ export class TypeSettings {
         });
         this.$el.find('select').trigger('chosen:updated');
         this.updateStyles();
+        this.updateColours();
+    }
+
+    updateColours() {
+        this.$el.find('.js-color').each(function () {
+            let $this = $(this);
+            $this.css({'background': $this.closest('.input-wrap__color').find('input').val()});
+        });
     }
 
     /* Update the current type settings */
@@ -196,6 +255,7 @@ export class TypeSettings {
             [selector]: {
                 attributes: {
                     "font-family"   : this.$el.find(`#${input}_font-family`).val(),
+                    "color"         : this.$el.find(`#${input}_color`).val(),
                     "font-size"     : this.$el.find(`#${input}_font-size`).val() + "rem",
                     "font-weight"   : this.$el.find(`#${input}_font-weight`).val(),
                     "font-style"    : this.$el.find(`#${input}_font-style`).val(),
