@@ -761,7 +761,7 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-            <button class="button js-save-type-settings">SAVE SETTINGS</button>
+            <button class="button js-save-type-settings"><span>SAVE SETTINGS</span></button>
         </div>
 
     </div>

@@ -38,6 +38,8 @@ $active-border-color: $primary;
     .js-collapsible {
         position: relative;
         svg {
+            width: 18px;
+            height: auto;
             transition: all 330ms $transition-standard;
         }
         &.expanded {
@@ -94,7 +96,7 @@ $active-border-color: $primary;
         left: 0;
         top: 0;
         bottom: 0;
-        background-image: linear-gradient(to bottom, #fff 0%, #ebebeb 100%);
+        background: white;
         z-index: 9;
         .type-settings__header {
             padding: 3rem 1rem 2rem;
@@ -106,14 +108,17 @@ $active-border-color: $primary;
                 text-align: center;
                 @include light;
                 font-size: 3rem;
+                margin-top: 1rem;
             }
             svg {
                 display: inline-block;
                 vertical-align: middle;
                 position: relative;
-                top: -2px;
+                top: -1px;
                 margin-right: 1rem;
                 margin-left: 1rem;
+                width: 55px;
+                height: auto;
                 path {
                     fill: $primary;
                 }
@@ -121,7 +126,7 @@ $active-border-color: $primary;
         }
         .scroll-wrap {
             position: absolute;
-            top: 7.5rem;
+            top: 9.5rem;
             right: 0;
             bottom: 0;
             left: 0;
