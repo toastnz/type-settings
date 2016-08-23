@@ -280,13 +280,10 @@ combokeys.bind(['ctrl+t'], function () {
     return false;
 });
 
-//Type.toggle();
-//Type.loadStyles();
-
 $('.js-save-type-settings').click(()=> {
     Type.saveCSS();
     Type.saveJS();
-    Type.saveStyles();
+    Type.saveStyles(); 
 });
 
 
