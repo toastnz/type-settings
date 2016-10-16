@@ -26,7 +26,7 @@
 
             <div class="headingWrap">
                 <div class="innerWrap">
-                    <h6 class="js-collapsible expanded" data-colapsible-target="#Heading_1">HEADING 1
+                    <h6 class="js-collapsible" data-colapsible-target="#Heading_1">HEADING 1
                         <svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g transform="translate(-499.000000, -319.000000)" fill="#FFFFFF">
@@ -35,7 +35,7 @@
                             </g>
                         </svg>
                     </h6>
-                    <div id="Heading_1" class="collapsible expanded js-type-setting" data-selector="h1">
+                    <div id="Heading_1" class="collapsible js-type-setting" data-selector="h1">
 
                         <%--Font Family--%>
                         <div class="input-wrap input-wrap__select input-wrap--full">
@@ -61,7 +61,6 @@
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_1_font-weight">
                                 <option value="100" selected="selected">100</option>
-                                <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
                                 <option value="500">500</option>
@@ -167,7 +166,6 @@
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_2_font-weight">
                                 <option value="100" selected="selected">100</option>
-                                <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
                                 <option value="500">500</option>
@@ -273,7 +271,6 @@
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_3_font-weight">
                                 <option value="100" selected="selected">100</option>
-                                <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
                                 <option value="500">500</option>
@@ -379,7 +376,6 @@
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_4_font-weight">
                                 <option value="100" selected="selected">100</option>
-                                <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
                                 <option value="500">500</option>
@@ -485,7 +481,6 @@
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_5_font-weight">
                                 <option value="100" selected="selected">100</option>
-                                <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
                                 <option value="500">500</option>
@@ -591,7 +586,6 @@
                         <div class="input-wrap input-wrap__select">
                             <select id="Heading_6_font-weight">
                                 <option value="100" selected="selected">100</option>
-                                <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
                                 <option value="500">500</option>
@@ -698,7 +692,6 @@
                         <div class="input-wrap input-wrap__select">
                             <select id="Paragraph_font-weight">
                                 <option value="100" selected="selected">100</option>
-                                <option value="200">200</option>
                                 <option value="300">300</option>
                                 <option value="400">400</option>
                                 <option value="500">500</option>
@@ -761,6 +754,7 @@
                 </div>
             </div>
             <div class="clearfix"></div>
+
             <button class="button js-save-type-settings"><span>SAVE SETTINGS</span></button>
         </div>
 

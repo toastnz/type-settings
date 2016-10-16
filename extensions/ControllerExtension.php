@@ -7,7 +7,8 @@ class ControllerExtension extends Extension {
         'SaveCSS',
         'SaveJS',
         'SaveTypeSettings',
-        'LoadTypeSettings'
+        'LoadTypeSettings',
+        'getCart'
     );
 
     public function LoadTypeSettings(SS_HTTPRequest $request) {
@@ -69,13 +70,16 @@ class ControllerExtension extends Extension {
         foreach ($tags as $tag) {
             foreach ($styles as $style) {
                 $field = $tag . preg_replace('/-/', '', $style);
-                $value = $data['styles'][$tag]['attributes'][$style];
-                $siteConfig->setField($field, preg_replace(['/px/', '/rem/'], '', $value));
+                if ($tag != 'li') {
+                    $value = $data['styles'][$tag]['attributes'][$style];
+                    $siteConfig->setField($field, preg_replace(['/px/', '/rem/'], '', $value));
+                }
             }
         }
-        $siteConfig->write();
-        return json_encode($siteConfig->getField('h1fontweight'), true);
-    }
 
+        $siteConfig->write();
+
+        return json_encode('good', true);
+    }
 
 }

@@ -31,6 +31,7 @@ export class TypeSettings {
         this.$el               = $(`#${element}`);
         this.$styleSheet       = $(`#${stylesheet}`);
         this.styles            = {children: {}};
+        this.colours           = {};
         this.colorPicker       = {};
         this.colorPickerActive = false;
         this.tags              = ['Heading_1', 'Heading_2', 'Heading_3', 'Heading_4', 'Heading_5', 'Heading_6', 'Paragraph'];
@@ -43,7 +44,8 @@ export class TypeSettings {
         /* Update style when the input elements change */
         this.$el.find('input, select').on('keyup input change', ()=> {
             this.updateStyles();
-        });
+        })
+        ;
 
         this.$el.find('select').each(function () {
             $(this).chosen({disable_search_threshold: 11});
@@ -51,14 +53,18 @@ export class TypeSettings {
 
         var $element = $('.js-color');
         this.$el.on('mouseup', (e)=> {
-            if (!$element.is(e.target) && $element.has(e.target).length === 0) {
+            if (
+                !$element.is(e.target) && $element.has(e.target).length === 0
+            ) {
                 this.destroyColorPicker();
             }
-        });
+        })
+        ;
 
         this.$el.find('.input-wrap__color input').on('change keyup', ()=> {
             this.updateColours();
-        });
+        })
+        ;
 
         this.$el.find('.js-color').on('click', (e)=> {
             let $el = $(e.target);
@@ -72,7 +78,8 @@ export class TypeSettings {
             } else {
                 this.createColorPicker($el);
             }
-        });
+        })
+        ;
 
         /* Enumerate the font gfamily select elements with our available fonts */
         this.$el.find('.js-font-family').each(function () {
@@ -114,7 +121,7 @@ export class TypeSettings {
     loadFonts() {
         let fontsToLoad = [];
         this.$el.find('.js-font-family').each(function () {
-            fontsToLoad.push($(this).find('option:selected').val());
+            fontsToLoad.push($(this).find('option:selected').val() + ':100,300,400,600,700,800,900');
         });
         WebFont.load({
             google: {
@@ -140,16 +147,18 @@ export class TypeSettings {
             type    : 'POST',
             dataType: 'json',
             data    : {
-                css: CSSJSON.toCSS(this.styles)
+                css    : CSSJSON.toCSS(this.styles)
             }
         }).done((response)=> {
-        });
+            }
+        )
+        ;
     }
 
     saveJS() {
         let fonts = [];
         this.$el.find('.js-font-family').each(function () {
-            fonts.push('"' + $(this).val() + '"')
+            fonts.push('"' + $(this).val() + ':100,300,400,600,700,800,900"')
         });
         fonts = _.uniq(fonts);
         $.ajax({
@@ -160,14 +169,17 @@ export class TypeSettings {
                 js: `${fonts}`
             }
         }).done((response)=> {
-        });
+            }
+        )
+        ;
     }
 
     /* Update all of the type setting fields with the currently saved values */
     setStyles(data) {
         var count = 0;
         _.each(data, (tag)=> {
-            if (tag.attributes['font-family']) {
+            if (tag.attributes['font-family']
+            ) {
                 this.$el.find(`#${this.tags[count]}_font-family`).val(tag.attributes['font-family']);
             }
             if (tag.attributes['color']) {
@@ -219,7 +231,8 @@ export class TypeSettings {
             }
         }).done(()=> {
             NProgress.done();
-        });
+        })
+        ;
     }
 
     /* Toggle the Type Settings Drawer */
@@ -248,6 +261,9 @@ export class TypeSettings {
     assignStyles() {
         this.$el.find('.js-type-setting').each((index, item)=> {
             _.assign(this.styles.children, this.createStyles($(item).attr('id'), $(item).attr('data-selector')));
+            if ($(item).attr('id') === 'Paragraph') {
+                _.assign(this.styles.children, this.createStyles($(item).attr('id'), 'html,li,td,th,label,input,textarea,select,span.readonly'));
+            }
         });
     }
 
@@ -280,10 +296,14 @@ combokeys.bind(['ctrl+t'], function () {
     return false;
 });
 
+Type.loadStyles();
+
 $('.js-save-type-settings').click(()=> {
     Type.saveCSS();
     Type.saveJS();
-    Type.saveStyles(); 
-});
+    Type.saveStyles();
+})
+;
+
 
 

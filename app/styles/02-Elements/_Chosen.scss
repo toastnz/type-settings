@@ -34,6 +34,7 @@ $box-background-inactive: $grey-light;
         font-family: 'Arial', sans-serif;
         * {
             font-family: 'Arial', sans-serif;
+            font-size: 1.8rem !important;
         }
         position: absolute;
         top: 100%;
@@ -78,7 +79,7 @@ $box-background-inactive: $grey-light;
         position: relative;
         display: block;
         overflow: hidden;
-        padding: 0.5rem 0 0.6rem;
+        padding: 1.1rem 0 1.1rem;
         border: 1px solid $input-border-colour;
         background-color: $input-background-colour;
         background-clip: padding-box;
@@ -87,6 +88,7 @@ $box-background-inactive: $grey-light;
         white-space: nowrap;
         line-height: 24px;
         height: auto;
+        font-size: 1.8rem !important;
     }
 
     .chosen-container-single .chosen-default {

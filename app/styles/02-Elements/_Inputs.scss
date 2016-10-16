@@ -25,7 +25,7 @@ $box-background-inactive: $grey-light;
     padding: 1rem 1rem;
     border-radius: 0;
     margin: 0.6rem 0 2rem;
-    @include font(p);
+    font-size:1.8rem !important;
     transition: all 120ms $transition-standard;
     @include placeholder {
         color: $input-placeholder-colour;
